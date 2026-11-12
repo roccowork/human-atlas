@@ -1,0 +1,10 @@
+// Cloudflare Workers static-assets deployment: `npm run deploy`
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "human-atlas",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}

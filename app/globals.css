@@ -86,3 +86,13 @@ h1 .edition{font-family:inherit;font-weight:500;font-size:10px;letter-spacing:.0
 @media(max-width:767px){body:has(.detail-sheet) .view-controls{visibility:hidden}}
 
 @media(max-height:600px) and (orientation:landscape){body:has(.detail-sheet) .bottom-dock{left:12px;right:324px;width:auto;transform:none;max-width:none;margin:0}}
+/* Structure tree panel */
+.panel-tabs{display:flex;gap:4px;background:#eef1f3;border-radius:8px;padding:3px}.panel-tabs button{font-size:12px;padding:5px 12px;border-radius:6px;color:#687582;min-height:30px}.panel-tabs button[aria-selected=true]{background:#fff;color:#26313c;box-shadow:0 1px 3px #18253614}
+.structure-tree{overflow-y:auto;overscroll-behavior:contain;flex:1;min-height:0;padding:6px 6px 10px 0;scrollbar-width:thin}
+.tree-label{font-size:11px;color:#87929d;margin:12px 3px 7px}
+.quick-organs{display:flex;flex-wrap:wrap;gap:5px}.quick-organs button{font-size:12px;padding:3px 9px;min-height:28px;height:auto;border:1px solid #18253618;border-radius:6px;color:#394957}.quick-organs button:hover{border-color:#536875}
+.tree-row{display:flex;align-items:center}.tree-toggle{flex:1;display:flex;align-items:center;gap:7px;min-height:34px;padding:0 4px;font-size:13px;color:#394957;justify-content:flex-start;text-align:left;border-radius:6px;min-width:0}
+.tree-row.level-1 .tree-toggle{padding-left:22px;font-size:12px;color:#53616e}.tree-eye{min-width:34px;min-height:34px;display:flex;align-items:center;justify-content:center;color:#7c8793;border-radius:6px}.tree-eye:hover{color:#263b48}
+.tree-leaves{display:flex;flex-direction:column;padding:2px 0 6px 40px}.tree-leaf{font-size:11.5px;line-height:1.35;text-align:left;justify-content:flex-start;padding:6px 6px;min-height:30px;color:#5b6875;border-radius:5px;white-space:normal;height:auto}
+.detail-actions{display:flex;flex-direction:column;gap:6px}
+@media(max-width:767px){.tree-toggle,.tree-eye{min-height:42px}.tree-toggle{font-size:14px}.tree-leaf{min-height:40px;font-size:13px}.quick-organs button{min-height:38px;font-size:13px}}

@@ -55,6 +55,18 @@ The repository includes browser-ready geometry. Rebuilding it is optional: obtai
 
 ## Deploy
 
+### Cloudflare (Workers static assets)
+
+```sh
+npm ci
+npx wrangler login
+npm run deploy
+```
+
+`wrangler.jsonc` serves `dist/` as static assets; `public/_headers` sets caching. Alternatively, connect the repo in Cloudflare Pages with build command `npm run build` and output directory `dist`.
+
+### Vercel
+
 Import this repository into Vercel as a Vite project. The included `vercel.json` configures `npm ci`, `npm run build`, and the `dist` output directory. It can also be served by a static host.
 
 ## License
