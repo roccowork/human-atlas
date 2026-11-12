@@ -1,8 +1,12 @@
 // Cloudflare Workers static-assets deployment: `npm run deploy`
+// Only reachable at atlas.liuxd.dev, which is protected by Cloudflare Access ("只有我" policy).
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "human-atlas",
   "compatibility_date": "2026-11-01",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [{ "pattern": "atlas.liuxd.dev", "custom_domain": true }],
   "assets": {
     "directory": "./dist",
     "not_found_handling": "single-page-application"
