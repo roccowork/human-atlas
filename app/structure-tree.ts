@@ -25,7 +25,7 @@ export interface SystemGroup {id:SystemId;name:string;color:string;parts:Part[];
 
 export function buildTree(atlas:Atlas):SystemGroup[]{
  return SYSTEMS.map(s=>{
-  const parts=atlas.parts.filter(p=>p.system===s.id).sort((a,b)=>a.name.localeCompare(b.name));
+  const parts=atlas.parts.filter(p=>p.system===s.id).sort((a,b)=>(a.zh??a.name).localeCompare(b.zh??b.name,'zh-CN'));
   const regions=REGIONS.map(r=>({...r,parts:parts.filter(p=>regionOf(p)===r.id)})).filter(r=>r.parts.length>0);
   return {id:s.id,name:SYSTEM_ZH[s.id],color:s.color,parts,regions};
  }).filter(s=>s.parts.length>0);

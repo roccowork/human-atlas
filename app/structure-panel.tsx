@@ -35,7 +35,7 @@ export function StructurePanel({atlas,onGroup,onPart,onSystem}:Props){
      </Button>
      <Button variant="ghost" className="tree-eye" title={`单独查看${s.name}·${r.name}`} aria-label={`单独查看${s.name}·${r.name}`} onClick={()=>onGroup(`${s.name} · ${r.name}`,r.parts.map(p=>p.id))}><Eye size={13}/></Button>
     </div>
-    {open[key]&&<div className="tree-leaves">{r.parts.map(p=><Button variant="ghost" key={p.id} className="tree-leaf" onClick={()=>onPart(p.id)}>{p.name}</Button>)}</div>}
+    {open[key]&&<div className="tree-leaves">{r.parts.map(p=><Button variant="ghost" key={p.id} className="tree-leaf" onClick={()=>onPart(p.id)} title={p.name}>{p.zh??p.name}</Button>)}</div>}
    </div>;})}
   </div>)}
  </div>;
